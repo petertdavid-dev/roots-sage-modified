@@ -1,0 +1,67 @@
+// Global elements
+
+// for using object-fit: cover for background images
+.cover {
+
+	&__container {
+			position: relative;
+	}
+
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.rwd-background {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transition: filter .45s linear;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	&--blurred {
+		-webkit-filter: blur(15px);
+		-moz-filter: blur(15px);
+		-o-filter: blur(15px);
+		-ms-filter: blur(15px);
+		filter: blur(15px);
+		overflow: hidden;
+	}
+
+	.img--scroll & {
+		background-position: 100% 0px;
+		animation: animatedBackground 100s linear infinite;
+	}
+
+}
+
+.jumbotron {
+
+	// .rwd-background {
+	//   -webkit-filter: grayscale(1);
+	//   filter: grayscale(1);
+	// }
+
+	&__overlay{
+		z-index: 2;
+	    position: absolute;
+	    z-index: 0;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+		opacity: .8;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 5;
+	}
+}
